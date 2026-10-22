@@ -43,8 +43,8 @@ See Sections 4.2.1–4.2.3 and Figure 3 of the paper for the formulation and pip
 
 | Executable | Source file | Partition-axis pairs considered | Description |
 | --- | --- | --- | --- |
-| `ups_config_a` | `src/ups_config_a.cpp` | Up to 3 × 3 = 9 pairs per subcloud | Source and target axes may **differ**. Axes are ranked separately. Formerly `versao_luis.cpp`. |
-| `ups_config_b` | `src/ups_config_b.cpp` | Up to 3 same-axis pairs per subcloud | Source and target use the **same** axis (X/X, Y/Y, or Z/Z). Formerly `versao_poly.cpp`. |
+| `ups_config_a` | `src/ups_config_a.cpp` | Up to 3 × 3 = 9 pairs per subcloud | Source and target axes may **differ**. Axes are ranked separately.|
+| `ups_config_b` | `src/ups_config_b.cpp` | Up to 3 same-axis pairs per subcloud | Source and target use the **same** axis (X/X, Y/Y, or Z/Z). |
 
 The paper defines Configuration B by choosing a common axis based on **target** variance. This legacy Configuration B implementation uses a common axis for each ICP trial, but its axis-priority calculation has an inconsistency noted below. Therefore, regard it as a **legacy, configuration-B-style implementation**, not a claim of exact reproduction of all results in the paper.
 
