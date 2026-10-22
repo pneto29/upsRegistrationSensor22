@@ -135,17 +135,7 @@ The `output.txt` file contains, among other fields:
 
 Lower RMSE is typically better, but a nearest-neighbor error by itself is not an exhaustive metric of alignment quality, particularly for partial overlap or symmetric geometry.
 
-## Legacy implementation notes
 
-These are **renamed legacy implementations**, with the original algorithm behavior kept intact for traceability. Before relying on them for a new benchmark or a reproduction study, review the following:
-
-1. **Variance calculation:** Both files use `variance(*target, centroid_s)` to rank source axes, where `centroid_s` is the **source** centroid. Configuration A would require `variance(*source, centroid_s)` for independent source ranking. Configuration B should rank its shared axes from the **target** cloud and **target** centroid, consistent with the paper.
-2. **Configuration B:** Same-axis pairs are implemented, but the independent target-based axis selection in the publication is not reproduced exactly.
-3. **Stopping:** The original B implementation has its outer early-stop check commented out. A may exit earlier than B for reasons beyond axis-pair selection alone.
-4. **Subcloud construction:** Partition sizes use integer division, and remaining points can be omitted from the partition lists. This does not modify the original full input clouds used for evaluation.
-5. **Validation:** The legacy sources do not validate argument counts, all point-cloud sizes, ICP convergence, or every numerical edge case. Supply valid arguments and nonempty point clouds; avoid configurations that produce zero-sized partitions.
-6. **Visualizers:** The source creates a second input viewer but only spins the aligned viewer; behavior depends on the PCL/VTK installation.
-7. **Benchmark comparability:** Changes in compiler, CPU, PCL version, test data, ICP settings, and the legacy issues above may affect runtime and accuracy. **No claim is made that the executables reproduce the numerical tables of the paper without additional validation.**
 
 ## License
 
