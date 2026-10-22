@@ -8,8 +8,6 @@ This repository provides two implementations associated with the configurations 
 
 **Souza Neto, P., Soares, J. M., and Thé, G. A. P.** (2022). “Uniaxial Partitioning Strategy for Efficient Point Cloud Registration.” *Sensors*, **22**(8), 2887. https://doi.org/10.3390/s22082887
 
-Open-access article: https://pmc.ncbi.nlm.nih.gov/articles/PMC9030376/
-
 If you use this software in academic work, please cite the publication:
 
 ```bibtex
